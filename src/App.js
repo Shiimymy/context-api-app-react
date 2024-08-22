@@ -1,8 +1,13 @@
 import logo from "./logo.svg";
 import "./App.css";
 import UserInfoContext from "./context/UserInfoContext";
+import BlogPage from "./components/BlogPage";
 
 export default function App() {
-  const userInfo = { user: "Admin", isAdmin: true };
-  return <UserInfoContext.Provider value={userInfo}></UserInfoContext.Provider>;
+  const userInfo = { username: "Admin", isAdmin: true };
+  return (
+    <UserInfoContext.Provider value={userInfo}>
+      <BlogPage></BlogPage>
+    </UserInfoContext.Provider>
+  );
 }
